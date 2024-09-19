@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Write Connection</title>
+
+    <!-- header font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- body font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- D3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+    <div class="mt-3">
+      <div class="container">
+        <h2 class="permanent-marker-regular">Making the Write Connections: Linking Writing Support Tools with Writer Needs</h3>
+          <div class="row mt-5">
+            <div id="abstract">
+              <h5 class="permanent-marker-regular"><mark>Abstract</mark></h5>
+              <div class="pt-2 inter-regular">
+                This work sheds light on whether and how creative writers' needs are met by existing research and commercial writing support tools 
+                (WST). We conducted a needs finding study to gain insights into writers' process during creative writing through a qualitative 
+                analysis of response from an online questionnaire and Reddit discussions on <i>r/Writing</i>. Using a systematic analysis of 115 
+                tools and 66 research papers, we map out the landscape of how digital tools facilitate the writing process. Our triangulation of 
+                data reveals that research predominantly focuses on the writing activity and overlooks pre-writing activities and the importance of 
+                visualization. We distill 10 key takeaways to inform future research on WST and point to opportunities surrounding underexplored
+                  areas. Our work offers a holistic and up-to-date account of how tools have transformed the writing process, guiding the design of 
+                  future tools that address writers' evolving and unmet needs. 
+              </div>
+            </div>
+          </div>
+      </div>
+
+    <ul class="nav nav-tabs mt-5 px-5">
+      <li class="nav-item">
+        <button class="nav-link permanent-marker-thin active" id="main-btn">Data Source</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link permanent-marker-thin" id="lit-btn">Literature</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link permanent-marker-thin" id="public-btn">Commercial Tools</button>
+      </li>
+    </ul>
+        <div class="container my-5" id="sources-area">
+          We obtained data from three separate sources:
+          <ul>
+            <li>Literature (ACM, ACL, Web of Science)</li>
+            <li>Online questionnaire (<a href="media/Online_questionnaire.pdf" target="_blank">questions</a>)</li>
+            <li>Reddit (<a href="https://www.reddit.com/r/writing/" target="_blank"><i>r/Writing</i></a>)</li>
+          </ul>
+
+          <br>
+          With these three data sources, we've created two interactive visualizations.
+          Select one of the tabs above to explore the visualizations!
+
+        </div>
+        <div class="row">
+          <div class="col my-3 mx-5 left-box">
+            <div id="lit-graph"><p class="px-5">
+              Visualization of the literature annotated using our <a href="media/wst_data_schema.pdf" target="_blank">data schema</a> sorted by year.
+              <br>
+              <small><i>HINT: You can click on the text to learn more about each paper.</i></small>
+            </p></div>
+          </div>
+          <div class="col right-box mt-5 py-2 mx-4 small-text" id="extra-info-lit">
+            <div id="extra-title-lit"></div>
+            <i>Abstract</i>
+            <div id="extra-abstract"></div>
+            <div id="extra-link-lit"></div>
+          </div>
+        </div>
+        <div class="mx-5" id="public-graph">
+          <div class="px-5 mb-3">
+            <button class="btn btn-light btn-sm mx-2 active" id="grid-btn">Grid View</button>
+            <button class="btn btn-light btn-sm mx-2" id="sunburst-btn">Sunburst View</button>
+          </div>
+          <div id="grid-area">
+            <p class="px-5 mx-2">
+              Visualization of commercial tools mentioned by writers in our online questionnaire and on Reddit. 
+              Each tool was annotated using our <a href="media/wst_data_schema.pdf" target="_blank">data schema</a> sorted in descending order by number of times mentioned.
+              <br>
+              <small><i>HINT: You can click on the text to learn more about each paper.</i></small>
+            </p>
+            <div class="row">
+             <div class="col" id="grid-graph"></div> 
+             <div class="col right-box mt-5 py-2 mx-4 small-text" id="extra-info-com">
+                <div id="extra-title-com"></div>
+                <div id="extra-usage"></div>
+                <div id="extra-link-com"></div>
+              </div>
+            </div>
+            
+          </div>
+          <div id="sunbusrt-area">
+            <p class="px-5 mx-2">
+              Visualization of commercial tools mentioned by writers in our online questionnaire and on Reddit. 
+              Each tool was annotated using our <a href="media/wst_data_schema.pdf" target="_blank">data schema</a> and grouped by how writers use the tool.
+              The size of each section is correlated to the number of times tools were mentioned.
+              <br>
+              <small><i>HINT: You can click on the colored slices to zoom in and click in the center to zoom out.</i></small>
+            </p>
+            <div class="col mx-5 px-5" id="sunbusrt-graph"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Graphs -->
+    <script src="static/graph.js"></script>
+  </body>
+</html>

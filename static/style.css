@@ -1,0 +1,68 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.inter-regular {
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    color: darkgoldenrod;
+}
+
+a:hover {
+    color: rgb(115, 85, 9)
+}
+
+.nav-link {
+    color: darkgoldenrod;
+}
+
+.nav-link:hover {
+    color: rgb(115, 85, 9)
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+mark {
+    background-color: rgba(255, 225, 0, 0.331);
+}
+
+.left-box {
+    width: 80%;
+    display:block;
+}
+
+.right-box {
+    width: 10%;
+}
+
+.permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .permanent-marker-thin {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 200;
+    font-style: normal;
+  }
+
+.small-text {
+    font-size: small;
+}
+
+.hoverable {
+    cursor: default;
+}
+
+.hoverable:hover {
+    cursor: pointer;
+}
