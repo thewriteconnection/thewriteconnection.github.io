@@ -320,7 +320,7 @@ async function zoomableSunburst() {
     const radius = width / 8;
         
     // color scheme
-    const color = d3.scaleOrdinal(["#e76f51","#9362B5","#e9c46a","#67ABC3"]);
+    const color = d3.scaleOrdinal(["#e76f51","#e9c46a","#9362B5","#67ABC3"]);
 
 
     // Compute the layout.
