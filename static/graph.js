@@ -168,6 +168,8 @@ async function makeLitGraph() {
 }
 
 async function makeToolGraphs() {
+    $("#sunburst-area").hide();
+    
     $("#grid-btn").click(() => {
         $("#grid-btn").addClass("active");
         $("#sunburst-btn").removeClass("active");
