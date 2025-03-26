@@ -43,10 +43,20 @@ $(document).ready(() => {
 })
 
 
-// literature graph
+
+/////////////////////////////////////////////////////////////////////////////
+///////////////////// literature graph
+/////////////////////////////////////////////////////////////////////////////
 async function makeLitGraph() {
     // var data = $.csv.toObjects('data/V4-cleaned-lit-review.csv'):
     var data = await getCSVData('data/v5-cleaned-lit-review.csv')
+    data.map((d) => {
+        d['Year'] = +d['Year']
+        return d
+    })
+
+
+
     let dy = 18, dx=15, pad = 25;
 
     var width = 1000, height = 2000, margin=5;
@@ -58,6 +68,11 @@ async function makeLitGraph() {
     var g = svg.selectAll(null)
             .data(data)
             .enter().append('g');
+
+    
+    $('#lit-order').on('change', () => {
+        updateLitVis(data, svg);
+    });
     
     var names = g.append("text")
                 .text(function(d) {return d.Name;})
@@ -165,7 +180,23 @@ async function makeLitGraph() {
                         }
                     });
     })
+
+
 }
+
+function updateLitVis(data, g) {
+    let ordering_type = $('#lit-order').find(":selected").val();
+    console.log(data)
+    data = data.sort((a,b) => {
+        return a[ordering_type] - b[ordering_type];
+    })
+    console.log(data)
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+////////////////// Commerical Tools Graphs
+/////////////////////////////////////////////////////////////////////////////
 
 async function makeToolGraphs() {
     $("#sunburst-area").hide();
@@ -307,6 +338,9 @@ async function gridGraph() {
                         }
                     });
     })
+
+
+
 }
 
 async function zoomableSunburst() {
